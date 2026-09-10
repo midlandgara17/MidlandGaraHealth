@@ -1288,3 +1288,20 @@ img {
     height: 210px;
   }
 }
+
+
+.hero-shop-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.hero-shop-note a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-shop-note a:hover {
+  text-decoration: underline;
+}

@@ -115,25 +115,52 @@ img {
 }
 
 
-.logo-mark {
+.logo {
 
-  width: 42px;
+  display: flex;
 
-  height: 42px;
+  align-items: center;
 
-  display: grid;
+  gap: 10px;
 
-  place-items: center;
+}
 
-  border-radius: 12px;
 
-  background: var(--blue);
+.logo img {
 
-  color: white;
+  width: 48px;
 
-  font-weight: 900;
+  height: 48px;
 
-  font-size: 22px;
+  object-fit: contain;
+
+  display: block;
+
+}
+
+
+.logo strong {
+
+  display: block;
+
+  color: var(--blue);
+
+  font-size: 17px;
+
+}
+
+
+.logo small {
+
+  display: block;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  color: var(--green);
+
+  font-weight: 800;
 
 }
 
@@ -1293,7 +1320,7 @@ img {
 .hero-shop-note {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--gray-500);
 }
 
 .hero-shop-note a {

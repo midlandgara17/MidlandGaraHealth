@@ -1,4 +1,4 @@
-:root {
+l:root {
 
   --blue: #0F4C81;
   --blue-dark: #08365c;
@@ -1310,6 +1310,7 @@ img {
   font-weight: 700;
 }
 
+
 @media (max-width: 680px) {
   .product-image {
     height: 210px;
@@ -1331,4 +1332,725 @@ img {
 
 .hero-shop-note a:hover {
   text-decoration: underline;
+}
+
+/* =========================================================
+   MIDLANDGARA HEALTH — POLISHED HOMEPAGE
+   ========================================================= */
+
+
+/* HERO
+--------------------------------------------------------- */
+
+.mg-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 0 5rem;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(22, 163, 74, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbfd 0%,
+      #ffffff 55%,
+      #f3f8fb 100%
+    );
+}
+
+.mg-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.mg-hero-content {
+  max-width: 680px;
+}
+
+.mg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border: 1px solid rgba(15, 76, 129, 0.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.8);
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mg-badge span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.mg-hero h1 {
+  margin: 1.5rem 0 1.3rem;
+  max-width: 680px;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  color: var(--black);
+}
+
+.mg-hero h1 span {
+  display: block;
+  color: var(--blue);
+}
+
+.mg-hero-text {
+  max-width: 590px;
+  margin-bottom: 2rem;
+  color: var(--gray-500);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.mg-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mg-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 2rem;
+}
+
+.mg-trust div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gray-500);
+  font-size: 0.88rem;
+}
+
+.mg-trust strong {
+  color: var(--green);
+}
+
+
+/* HERO VISUAL
+--------------------------------------------------------- */
+
+.mg-hero-visual {
+  position: relative;
+  min-height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-main-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 470px);
+  padding: 2.3rem;
+  border: 1px solid rgba(15, 76, 129, 0.08);
+  border-radius: 28px;
+  background: white;
+  box-shadow:
+    0 30px 70px rgba(15, 76, 129, 0.14);
+}
+
+.mg-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+}
+
+.mg-card-top span {
+  color: var(--gray-500);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.mg-card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--blue);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.mg-main-card h2 {
+  margin-bottom: 1rem;
+  color: var(--black);
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.mg-main-card p {
+  margin-bottom: 1.7rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+.mg-card-link {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mg-card-link:hover {
+  text-decoration: underline;
+}
+
+.mg-floating-card {
+  position: absolute;
+  z-index: 3;
+  padding: 15px 18px;
+  border: 1px solid rgba(15, 76, 129, 0.08);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 15px 40px rgba(15, 76, 129, 0.12);
+}
+
+.mg-floating-card strong {
+  display: block;
+  color: var(--blue);
+  font-size: 0.85rem;
+}
+
+.mg-floating-card span {
+  display: block;
+  margin-top: 3px;
+  color: var(--gray-500);
+  font-size: 0.72rem;
+}
+
+.mg-floating-one {
+  top: 5%;
+  right: -2%;
+}
+
+.mg-floating-two {
+  bottom: 7%;
+  left: -4%;
+}
+
+
+/* TRUST STRIP
+--------------------------------------------------------- */
+
+.mg-trust-strip {
+  border-top: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--gray-100);
+  background: white;
+}
+
+.mg-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mg-trust-grid > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 1.3rem 1rem;
+  border-right: 1px solid var(--gray-100);
+}
+
+.mg-trust-grid > div:last-child {
+  border-right: 0;
+}
+
+.mg-trust-grid strong {
+  color: var(--blue);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.mg-trust-grid span {
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+
+/* SECTION HEADINGS
+--------------------------------------------------------- */
+
+.mg-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mg-section-heading h2 {
+  max-width: 650px;
+  margin-top: 0.6rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.mg-section-heading p {
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+
+/* SERVICES
+--------------------------------------------------------- */
+
+.mg-service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.mg-service-card {
+  position: relative;
+  min-height: 330px;
+  padding: 1.7rem;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  background: white;
+  transition: 0.25s ease;
+}
+
+.mg-service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(15, 76, 129, 0.15);
+  box-shadow: var(--shadow);
+}
+
+.mg-service-number {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  color: #cbd5e1;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.mg-service-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  background: #eef5fa;
+  color: var(--blue);
+  font-size: 1.6rem;
+}
+
+.mg-service-card h3 {
+  margin-bottom: 0.8rem;
+  color: var(--black);
+  font-size: 1.15rem;
+}
+
+.mg-service-card p {
+  margin-bottom: 1.5rem;
+  color: var(--gray-500);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.mg-service-card a {
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* LIBRARY
+--------------------------------------------------------- */
+
+.mg-library {
+  background: var(--gray-50);
+}
+
+.mg-view-all {
+  justify-self: end;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mg-article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mg-article-card {
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: white;
+  border: 1px solid var(--gray-100);
+}
+
+.mg-article-card > span {
+  color: var(--green);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.mg-article-card h3 {
+  margin: 1.2rem 0 0.8rem;
+  color: var(--black);
+  font-size: 1.35rem;
+}
+
+.mg-article-card p {
+  min-height: 85px;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+.mg-article-card a {
+  display: inline-block;
+  margin-top: 1.3rem;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* WHY MIDLANDGARA
+--------------------------------------------------------- */
+
+.mg-why {
+  background: white;
+}
+
+.mg-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.mg-why-content h2 {
+  max-width: 600px;
+  margin: 0.7rem 0 1.3rem;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.mg-why-content > p {
+  max-width: 620px;
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+.mg-check-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 13px;
+}
+
+.mg-check-list div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mg-check-list strong {
+  color: var(--green);
+}
+
+.mg-check-list span {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+.mg-stat-card {
+  padding: 2.5rem;
+  border-radius: 28px;
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 25px 60px rgba(15, 76, 129, 0.2);
+}
+
+.mg-stat-logo {
+  width: 70px;
+  height: 70px;
+  padding: 9px;
+  margin-bottom: 2rem;
+  border-radius: 18px;
+  background: white;
+}
+
+.mg-stat-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mg-stat-card .eyebrow {
+  color: rgba(255,255,255,0.7);
+}
+
+.mg-stat-card h3 {
+  margin: 1rem 0;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.mg-stat-card p {
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+
+/* PRODUCT BANNER
+--------------------------------------------------------- */
+
+.mg-product-banner {
+  background: #f5f8fa;
+}
+
+.mg-product-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.mg-product-grid h2 {
+  max-width: 600px;
+  margin: 0.7rem 0 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.mg-product-grid p {
+  max-width: 570px;
+  margin-bottom: 1.7rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+.mg-product-points {
+  display: grid;
+  gap: 1rem;
+}
+
+.mg-product-points div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1.3rem;
+  border-radius: 15px;
+  background: white;
+  border: 1px solid var(--gray-100);
+}
+
+.mg-product-points strong {
+  color: var(--blue);
+  font-size: 0.75rem;
+}
+
+.mg-product-points span {
+  color: var(--gray-700);
+  font-weight: 800;
+}
+
+
+/* FINAL CTA
+--------------------------------------------------------- */
+
+.mg-final-cta {
+  padding: 5rem 0;
+  background: white;
+}
+
+.mg-final-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3.2rem;
+  border-radius: 28px;
+  background: var(--blue);
+}
+
+.mg-final-box h2 {
+  margin: 0.7rem 0;
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.mg-final-box p {
+  max-width: 600px;
+  margin: 0;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.mg-final-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.mg-contact-link {
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+  .mg-hero-grid,
+  .mg-why-grid,
+  .mg-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-hero-grid {
+    gap: 3rem;
+  }
+
+  .mg-hero-visual {
+    min-height: 400px;
+  }
+
+  .mg-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mg-section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-view-all {
+    justify-self: start;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .mg-hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .mg-hero h1 {
+    font-size: 3rem;
+  }
+
+  .mg-hero-text {
+    font-size: 1rem;
+  }
+
+  .mg-hero-actions {
+    flex-direction: column;
+  }
+
+  .mg-hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mg-trust {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .mg-hero-visual {
+    min-height: 360px;
+  }
+
+  .mg-main-card {
+    padding: 1.6rem;
+  }
+
+  .mg-floating-one {
+    top: 0;
+    right: 0;
+  }
+
+  .mg-floating-two {
+    bottom: 0;
+    left: 0;
+  }
+
+  .mg-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-trust-grid > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .mg-trust-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .mg-service-grid,
+  .mg-article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mg-service-card {
+    min-height: auto;
+  }
+
+  .mg-article-card p {
+    min-height: auto;
+  }
+
+  .mg-why-grid,
+  .mg-product-grid {
+    gap: 2.5rem;
+  }
+
+  .mg-final-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
+  .mg-final-actions {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .mg-final-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
 }

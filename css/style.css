@@ -2084,3 +2084,150 @@ img {
   transition: 0.2s ease;
 }
 
+/* =========================================
+   HEALTH LIBRARY IMAGE SYSTEM
+========================================= */
+
+.health-library {
+  overflow: hidden;
+}
+
+.library-feature {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  min-height: 430px;
+  margin-top: 2.5rem;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.library-feature-image {
+  min-height: 430px;
+}
+
+.library-feature-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.library-feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.library-feature-content h3 {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  color: var(--black);
+}
+
+.library-feature-content p {
+  max-width: 500px;
+  color: var(--gray-500);
+  line-height: 1.8;
+}
+
+.library-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* Smaller article cards */
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.library-card {
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.library-card-image {
+  height: 230px;
+  overflow: hidden;
+}
+
+.library-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.library-card:hover .library-card-image img {
+  transform: scale(1.04);
+}
+
+.library-card-content {
+  padding: 1.5rem;
+}
+
+.library-card-content h3 {
+  margin: 0.6rem 0 0.7rem;
+  color: var(--black);
+}
+
+.library-card-content p {
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+.library-card-content a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .library-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .library-feature-image {
+    min-height: 300px;
+  }
+
+  .library-feature-content {
+    padding: 2rem;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 680px) {
+
+  .library-feature-image {
+    min-height: 240px;
+  }
+
+  .library-card-image {
+    height: 210px;
+  }
+
+}

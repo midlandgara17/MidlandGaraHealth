@@ -17,4 +17,4 @@ document.addEventListener("DOMContentLoaded", () => {
     year.textContent = new Date().getFullYear();
   }
 
-});
+}); 

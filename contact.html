@@ -28,7 +28,7 @@
 <li><a href="./products.html">Products</a></li>
 <li><a href="./cpd.html">Professional / CPD</a></li>
 <li><a href="./about.html">About</a></li>
-<li><a href="./contact.html">Contact</a></li></ul>
+<li><a href="./contact.html">Contact</a></li><li><a href="./portal.html">My Account</a></li></ul>
     </nav>
   </div>
 </header>
@@ -39,6 +39,8 @@
 <article class="contact-card"><span class="eyebrow">WHATSAPP</span><h2>Chat with us</h2><p>Send your question and tell us what kind of support you are looking for.</p><a class="btn btn-primary" href="https://wa.me/254745698054?text=Hello%20MidlandGara%20Health%2C%20I%20would%20like%20to%20start%20a%20conversation." target="_blank" rel="noopener">Open WhatsApp</a></article>
 <article class="contact-card"><span class="eyebrow">PHONE</span><h2>Call us</h2><p>For enquiries, you can also call the MidlandGara Health contact number.</p><a class="btn btn-outline" href="tel:+254745698054">0745 698 054</a></article>
 </div></div></section>
+<section class="section" id="appointment"><div class="container"><div class="section-heading"><span class="eyebrow">APPOINTMENTS</span><h2>Request an appointment</h2><p>Submit your preferred details. This is a request, not an automatic confirmation.</p></div><form id="appointment-form" class="card" style="padding:24px;display:grid;gap:14px"><input name="name" required placeholder="Full name"><input name="phone" required placeholder="Phone number"><input name="email" type="email" placeholder="Email address"><select name="service" required><option value="">Select service</option><option>Health Consultation</option><option>Nursing & Home Care</option><option>Professional / CPD Support</option><option>Other</option></select><input name="date" type="date" required><input name="time" type="time"><textarea name="notes" rows="5" placeholder="Tell us anything useful about your request"></textarea><button class="btn btn-primary" type="submit">Submit appointment request</button></form></div></section>
+<section class="section section-soft"><div class="container"><div class="section-heading"><span class="eyebrow">SEND A MESSAGE</span><h2>Contact form</h2></div><form id="contact-form" class="card" style="padding:24px;display:grid;gap:14px"><input name="name" required placeholder="Full name"><input name="email" type="email" placeholder="Email address"><input name="phone" placeholder="Phone number"><input name="subject" placeholder="Subject"><textarea name="message" rows="6" required placeholder="Your message"></textarea><button class="btn btn-primary" type="submit">Send message</button></form></div></section>
 <section class="section section-soft"><div class="container"><div class="section-heading"><span class="eyebrow">URGENT MEDICAL PROBLEMS</span><h2>Some situations need immediate care.</h2><p>If someone has severe difficulty breathing, severe chest pain, sudden weakness or numbness, loss of consciousness, seizures, severe bleeding or another potentially life-threatening emergency, seek urgent medical care at the nearest appropriate emergency facility.</p></div></div></section>
 
 </main>
@@ -66,6 +68,8 @@
 </footer>
 <a class="floating-whatsapp" href="https://wa.me/254745698054?text=Hello%20MidlandGara%20Health%2C%20I%20would%20like%20to%20make%20an%20enquiry."
    target="_blank" rel="noopener" aria-label="Chat with MidlandGara Health on WhatsApp">WhatsApp</a>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

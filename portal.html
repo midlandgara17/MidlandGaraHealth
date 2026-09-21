@@ -1,3 +1,414 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Member Portal | MidlandGara Health</title><link rel="stylesheet" href="css/style.css"></head><body>
-<header class="site-header"><div class="container nav-container"><a href="index.html" class="logo"><img class="logo-image" src="Assets/file_00000000edec82468c2c88bdebb8bed5.png" alt="MidlandGara Health"></a><nav><ul class="nav-menu"><li><a href="index.html">Home</a></li><li><a href="education.html">Health Library</a></li><li><a href="cpd.html">Professional / CPD</a></li><li><a href="contact.html">Appointments</a></li></ul></nav></div></header>
-<main><section class="page-intro"><div class="container"><span class="eyebrow">MIDLANDGARA HEALTH</span><h1>Sign in or create your account</h1><p>Use your account to manage appointments and CPD records.</p></div></section><section class="section"><div class="container grid grid-2"><form id="login-form" class="card" style="padding:24px;display:grid;gap:14px"><h2>Sign in</h2><input name="email" type="email" required placeholder="Email address"><input name="password" type="password" required placeholder="Password"><button class="btn btn-primary" type="submit">Sign in</button></form><form id="signup-form" class="card" style="padding:24px;display:grid;gap:14px"><h2>Create account</h2><input name="full_name" required placeholder="Full name"><input name="email" type="email" required placeholder="Email address"><input name="password" type="password" minlength="6" required placeholder="Password (6+ characters)"><button class="btn btn-primary" type="submit">Create account</button></form></div><div class="container notice" style="margin-top:24px"><p><strong>Demo mode:</strong> Until your Supabase URL and publishable/anon key are added to <code>js/config.js</code>, accounts are stored only in this browser. Do not use real sensitive information in demo mode.</p></div></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Member Portal | MidlandGara Health</title>
+
+  <meta
+    name="description"
+    content="Sign in or create your MidlandGara Health account to manage appointments, professional development and your health services."
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER / NAVIGATION
+  ========================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+
+      <a href="index.html" class="logo" aria-label="MidlandGara Health home">
+        <img
+          class="logo-image"
+          src="Assets/file_00000000edec82468c2c88bdebb8bed5.png"
+          alt="MidlandGara Health"
+        >
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      <nav
+        id="site-navigation"
+        aria-label="Main navigation"
+      >
+        <ul class="nav-menu">
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="services.html">Services</a>
+          </li>
+
+          <li>
+            <a href="education.html">Health Library</a>
+          </li>
+
+          <li>
+            <a href="products.html">Products</a>
+          </li>
+
+          <li>
+            <a href="cpd.html">Professional / CPD</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
+          <li>
+            <a href="portal.html" aria-current="page">
+              My Account
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+  <main>
+
+    <!-- Page introduction -->
+    <section class="page-intro">
+      <div class="container">
+
+        <span class="eyebrow">
+          MIDLANDGARA HEALTH
+        </span>
+
+        <h1>
+          Sign in or create your account
+        </h1>
+
+        <p>
+          Access your MidlandGara Health account to manage appointments,
+          professional development and your personal services.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         AUTHENTICATION
+    ========================== -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="grid grid-2">
+
+          <!-- SIGN IN -->
+          <form
+            id="login-form"
+            class="card"
+            style="padding:24px;display:grid;gap:14px"
+          >
+
+            <h2>
+              Sign in
+            </h2>
+
+            <p>
+              Already have a MidlandGara Health account?
+            </p>
+
+            <label for="login-email">
+              Email address
+            </label>
+
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Email address"
+            >
+
+            <label for="login-password">
+              Password
+            </label>
+
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="Password"
+            >
+
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Sign in
+            </button>
+
+            <div
+              id="login-message"
+              class="form-message"
+              aria-live="polite"
+            ></div>
+
+          </form>
+
+
+          <!-- CREATE ACCOUNT -->
+          <form
+            id="signup-form"
+            class="card"
+            style="padding:24px;display:grid;gap:14px"
+          >
+
+            <h2>
+              Create account
+            </h2>
+
+            <p>
+              Create your MidlandGara Health account to access
+              personalised services.
+            </p>
+
+            <label for="signup-name">
+              Full name
+            </label>
+
+            <input
+              id="signup-name"
+              name="full_name"
+              type="text"
+              autocomplete="name"
+              required
+              placeholder="Full name"
+            >
+
+            <label for="signup-email">
+              Email address
+            </label>
+
+            <input
+              id="signup-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="Email address"
+            >
+
+            <label for="signup-password">
+              Password
+            </label>
+
+            <input
+              id="signup-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+              placeholder="Password (6+ characters)"
+            >
+
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Create account
+            </button>
+
+            <div
+              id="signup-message"
+              class="form-message"
+              aria-live="polite"
+            ></div>
+
+          </form>
+
+        </div>
+
+
+        <!-- ACCOUNT INFORMATION -->
+        <div
+          class="notice"
+          style="margin-top:24px"
+        >
+
+          <p>
+            <strong>Your information is handled through your MidlandGara
+            Health account.</strong>
+          </p>
+
+          <p>
+            After creating an account, you may be asked to confirm your
+            email address before signing in.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a
+            href="index.html"
+            class="logo"
+            aria-label="MidlandGara Health home"
+          >
+            <img
+              class="logo-image"
+              src="Assets/file_00000000edec82468c2c88bdebb8bed5.png"
+              alt="MidlandGara Health"
+            >
+          </a>
+
+          <p>
+            Health education, professional development and accessible
+            healthcare support.
+          </p>
+
+        </div>
+
+
+        <div>
+          <h3>
+            Quick links
+          </h3>
+
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+
+            <li>
+              <a href="services.html">Services</a>
+            </li>
+
+            <li>
+              <a href="education.html">Health Library</a>
+            </li>
+
+            <li>
+              <a href="products.html">Products</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h3>
+            Professional
+          </h3>
+
+          <ul>
+            <li>
+              <a href="cpd.html">Professional / CPD</a>
+            </li>
+
+            <li>
+              <a href="portal.html">My Account</a>
+            </li>
+
+            <li>
+              <a href="contact.html">Appointments</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h3>
+            Contact
+          </h3>
+
+          <ul>
+            <li>
+              <a
+                href="https://wa.me/254745698054"
+                target="_blank"
+                rel="noopener"
+              >
+                WhatsApp
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:0745698054">
+                0745 698 054
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 MidlandGara Health. All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="js/config.js"></script>
+
+  <script src="js/main.js?v=4"></script>
+
+</body>
+</html>

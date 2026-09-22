@@ -157,6 +157,7 @@
     const open = $("[data-open-cart]"); if (open) open.onclick = () => { ensureCartUI(); renderCart(); $("#mgh-cart-drawer").hidden = false; };
   }
 
+  
   function wireAuth() {
     const form = $("#login-form"); if (form) form.addEventListener("submit", async e => { e.preventDefault(); try { await signIn(form.email.value.trim(), form.password.value); toast("Signed in successfully."); setTimeout(() => location.href = "dashboard.html", 400); } catch (err) { toast(err.message || "Sign in failed.", "error"); } });
     const signup = $("#signup-form"); if (signup) signup.addEventListener("submit", async e => { e.preventDefault(); try { await signUp(signup.email.value.trim(), signup.password.value, signup.full_name.value.trim()); toast(sb ? "Account created. Check your email if confirmation is required." : "Account created."); setTimeout(() => location.href = "dashboard.html", 600); } catch (err) { toast(err.message || "Sign up failed.", "error"); } });
@@ -176,7 +177,7 @@
     const render = q => { const term = q.toLowerCase().trim(); const list = articles.filter(a => !term || `${a.title} ${a.category} ${a.excerpt}`.toLowerCase().includes(term)); root.innerHTML = list.map(a => `<article class="library-card"><div class="library-card-image"><img src="${escapeHtml(a.image || "")}" alt="${escapeHtml(a.title)}" loading="lazy"></div><div class="library-card-content"><span class="article-tag">${escapeHtml(a.category || "HEALTH")}</span><h3>${escapeHtml(a.title)}</h3><p>${escapeHtml(a.excerpt || "")}</p><a href="${escapeHtml(a.url || "#")}">Read article →</a></div></article>`).join("") || "<p>No matching articles found.</p>"; };
     input.addEventListener("input", () => render(input.value)); render("");
   }
-
+  
   document.addEventListener("DOMContentLoaded", async () => {
     initNavigation(); renderCartCount(); ensureCartUI(); wireAuth(); wireForms(); await renderProducts(); await wireSearch(); await renderDashboard();
     $$("[data-open-cart]").forEach(b => b.addEventListener("click", () => { renderCart(); $("#mgh-cart-drawer").hidden = false; }));

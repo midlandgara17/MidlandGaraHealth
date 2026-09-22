@@ -177,6 +177,43 @@
     const render = q => { const term = q.toLowerCase().trim(); const list = articles.filter(a => !term || `${a.title} ${a.category} ${a.excerpt}`.toLowerCase().includes(term)); root.innerHTML = list.map(a => `<article class="library-card"><div class="library-card-image"><img src="${escapeHtml(a.image || "")}" alt="${escapeHtml(a.title)}" loading="lazy"></div><div class="library-card-content"><span class="article-tag">${escapeHtml(a.category || "HEALTH")}</span><h3>${escapeHtml(a.title)}</h3><p>${escapeHtml(a.excerpt || "")}</p><a href="${escapeHtml(a.url || "#")}">Read article →</a></div></article>`).join("") || "<p>No matching articles found.</p>"; };
     input.addEventListener("input", () => render(input.value)); render("");
   }
+
+
+    /*
+   * Supabase authentication state
+   * Handles the session after email confirmation.
+   */
+  if (sb) {
+    sb.auth.onAuthStateChange((event, session) => {
+
+      if (
+        (event === "SIGNED_IN" || event === "INITIAL_SESSION") &&
+        session?.user
+      ) {
+        const path = window.location.pathname;
+
+        /*
+         * If the user has just confirmed their email
+         * or signs in from the portal, take them to
+         * their account dashboard.
+         */
+        if (
+          path.endsWith("/portal.html") ||
+          path.endsWith("/index.html") ||
+          path.endsWith("/MidlandGaraHealth/") ||
+          path.endsWith("/MidlandGaraHealth")
+        ) {
+          setTimeout(() => {
+            window.location.href = "dashboard.html";
+          }, 300);
+        }
+      }
+
+      if (event === "SIGNED_OUT") {
+        console.log("MidlandGara Health: user signed out.");
+      }
+    });
+  }
   
   document.addEventListener("DOMContentLoaded", async () => {
     initNavigation(); renderCartCount(); ensureCartUI(); wireAuth(); wireForms(); await renderProducts(); await wireSearch(); await renderDashboard();

@@ -157,12 +157,73 @@
     const open = $("[data-open-cart]"); if (open) open.onclick = () => { ensureCartUI(); renderCart(); $("#mgh-cart-drawer").hidden = false; };
   }
 
-  
   function wireAuth() {
-    const form = $("#login-form"); if (form) form.addEventListener("submit", async e => { e.preventDefault(); try { await signIn(form.email.value.trim(), form.password.value); toast("Signed in successfully."); setTimeout(() => location.href = "dashboard.html", 400); } catch (err) { toast(err.message || "Sign in failed.", "error"); } });
-    const signup = $("#signup-form"); if (signup) signup.addEventListener("submit", async e => { e.preventDefault(); try { await signUp(signup.email.value.trim(), signup.password.value, signup.full_name.value.trim()); toast(sb ? "Account created. Check your email if confirmation is required." : "Account created."); setTimeout(() => location.href = "dashboard.html", 600); } catch (err) { toast(err.message || "Sign up failed.", "error"); } });
-    $$("[data-signout]").forEach(b => b.addEventListener("click", signOut));
+  const form = $("#login-form");
+
+  if (form) {
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+
+      try {
+        await signIn(
+          form.email.value.trim(),
+          form.password.value
+        );
+
+        toast("Signed in successfully.");
+
+        setTimeout(() => {
+          location.href = "dashboard.html";
+        }, 500);
+
+      } catch (err) {
+        toast(
+          err.message || "Sign in failed.",
+          "error"
+        );
+      }
+    });
   }
+
+  const signup = $("#signup-form");
+
+  if (signup) {
+    signup.addEventListener("submit", async e => {
+      e.preventDefault();
+
+      try {
+        const user = await signUp(
+          signup.email.value.trim(),
+          signup.password.value,
+          signup.full_name.value.trim()
+        );
+
+        if (sb && user) {
+          toast(
+            "Account created. Please check your email and confirm your account."
+          );
+          return;
+        }
+
+        toast("Account created.");
+
+        setTimeout(() => {
+          location.href = "dashboard.html";
+        }, 500);
+
+      } catch (err) {
+        toast(
+          err.message || "Sign up failed.",
+          "error"
+        );
+      }
+    });
+  }
+
+  $$("[data-signout]").forEach(b =>
+    b.addEventListener("click", signOut)
+  );
+}
 
   function wireForms() {
     const appt = $("#appointment-form"); if (appt) appt.addEventListener("submit", async e => { e.preventDefault(); try { await submitAppointment(appt); } catch (err) { toast(err.message || "Could not submit appointment.", "error"); } });

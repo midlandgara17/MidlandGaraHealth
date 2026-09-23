@@ -62,11 +62,21 @@
 
   async function signUp(email, password, fullName) {
     if (!email || password.length < 6) throw new Error("Use a valid email and a password of at least 6 characters.");
-    if (sb) {
-      const { data, error } = await sb.auth.signUp({ email, password, options: { data: { full_name: fullName } } });
-      if (error) throw error;
-      return data.user;
+  if (sb) {
+  const { data, error } = await sb.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: "https://midlandgara17.github.io/MidlandGaraHealth/",
+      data: {
+        full_name: fullName
+      }
     }
+  });
+
+  if (error) throw error;
+  return data.user;
+}
     const user = { id: "demo-" + Date.now(), email, full_name: fullName, created_at: new Date().toISOString() };
     write(LS.user, user); return user;
   }
